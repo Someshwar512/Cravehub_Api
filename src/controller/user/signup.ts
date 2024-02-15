@@ -31,7 +31,7 @@ const countryRepository = AppDataSource.getRepository(Country);
 const OTP_LENGTH: number = parseInt(process.env.OTPLENGTH || '6', 10);
 
 export class UserSignupController {
-    // signup user api
+    // signup user api mobile app site 
     async signup(req: Request, res: Response) {
         let newZipcode;
         try {
@@ -156,7 +156,7 @@ export class UserSignupController {
 
         } catch (error) {
             console.log(error)
-            return ResponseUtil.sendErrror(res, 'Internal server error', 500, error);
+            return ResponseUtil.sendErrror(res, 'Internal server error', 500, "Internal server error");
         }
     }
 

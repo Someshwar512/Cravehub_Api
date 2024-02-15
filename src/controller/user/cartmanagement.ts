@@ -10,7 +10,7 @@ const cartRepository = AppDataSource.getRepository(Cart);
 
 export class CartController {
 
-  // addtocart api
+  // addtocart api 
   async addToCart(req: Request, res: Response) {
     try {
       const { dish_id, total_quantity, delivery_date } = req.body;
@@ -22,7 +22,7 @@ export class CartController {
 
 
       if (!dish) {
-        return ResponseUtil.sendErrror(res, 'Dish not found.', 404, '');
+        return ResponseUtil.sendErrror(res, 'Dish not found .', 404, '');
       }
 
       let cartDetails = await cartRepository
