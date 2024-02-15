@@ -71,6 +71,7 @@ export class UserDashboardController {
       const pickupTimeInMinutes = pickupTime ? convertTimeToMinutes(pickupTime) : null;
 
       return {
+        // 
         dish_id: dish.id,
         dish_image: dish.image_url,
         dish_name: dish.name,
