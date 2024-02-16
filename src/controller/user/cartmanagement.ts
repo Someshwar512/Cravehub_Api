@@ -89,6 +89,7 @@ export class CartController {
   // getCartDetails api
 async getCartDetails(req: Request, res: Response) {
   try {
+    // join multiple
     const cartItems = await cartRepository
       .createQueryBuilder(DatabaseTables.CART)
       .leftJoin('cart.user', 'user')

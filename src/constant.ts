@@ -39,7 +39,8 @@ export enum DatabaseTables {
   CHEF_MENU="chef_menu",
   ORDER_ITEMS="order_items",
   CART="cart",
-  PAYMENT_TRANSACTIONS="payment_transactions"
+  PAYMENT_TRANSACTIONS="payment_transactions",
+  ADMIN_SETTINGS="admin_settings"
 }
 
 export enum Roles {
