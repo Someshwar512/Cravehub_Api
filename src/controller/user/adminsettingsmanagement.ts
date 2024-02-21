@@ -30,8 +30,7 @@ export class AdminSettingsController {
         const adminSettings = await adminSettingsRepository.findOne({where:{}});
 
         if (!adminSettings) {
-            res.status(404).json({ message: 'Admin settings not found' });
-            // return ResponseUtil.sendErrror(res,'Admin settings not founds')
+            return ResponseUtil.sendErrror(res,'Admin settings not founds',404,'');
             return;
         }
 
