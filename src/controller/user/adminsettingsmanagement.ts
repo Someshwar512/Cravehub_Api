@@ -22,8 +22,7 @@ const adminSettingsRepository=AppDataSource.getRepository(AdminSettings);
 
 
 export class AdminSettingsController {
-//   getapi adminsettings 
-
+//  getapi adminsettings 
  async getAdminSettingsDetails (req: Request, res: Response) {
     try {
       

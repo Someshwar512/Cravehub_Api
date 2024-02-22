@@ -18,6 +18,7 @@ import { OrderManagementController } from "../controller/user/ordermanagement";
 import { PaymentManagementController } from "../controller/user/paymentmanagement";
 import { GuestUserController } from "../controller/user/guestusermanagement";
 import { AdminSettingsController } from "../controller/user/adminsettingsmanagement";
+import { UserProfileController } from "../controller/user/userProfile";
 // *********************** API AppSite :-vserions **************************
 const userVersionsController=new UserVersionController();
 router.post('/version',userVersionsController.version);
@@ -138,5 +139,8 @@ router.get('/GuestUser/:zipcode', (req, res) => guestUserController.getDashboard
 const adminSettingsController=new AdminSettingsController();
 // Route for getting admin settings details
 router.get('/admin-settings',adminSettingsController.getAdminSettingsDetails);
+
+
+const userProfileController=new UserProfileController();
 
 export default router;

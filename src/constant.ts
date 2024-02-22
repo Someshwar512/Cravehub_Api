@@ -139,6 +139,3 @@ CREATED="CREATED",
 PAID="PAID",
 }
 
-// export enum {
-
-// }
