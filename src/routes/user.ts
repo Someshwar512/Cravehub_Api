@@ -142,5 +142,8 @@ router.get('/admin-settings',adminSettingsController.getAdminSettingsDetails);
 
 
 const userProfileController=new UserProfileController();
+router.get('/UpdateUserProfile',authenticateToken,userProfileController.updateProfile);
+
+router.delete('/user/:userId',authenticateToken, userProfileController.deleteProfile);
 
 export default router;

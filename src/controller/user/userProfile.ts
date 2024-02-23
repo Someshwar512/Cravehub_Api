@@ -61,6 +61,27 @@ export class UserProfileController {
         }
     }
 
+    async deleteProfile(req: Request, res: Response) {
+        try {
+            const userId = parseInt(req.params.userId, 10);
+
+            const user = await userRepository.findOne({ where: { id: userId } });
+
+            if (!user) {
+                return ResponseUtil.sendErrror(res, "User not found", 404,'');
+            }
+
+            // Delete the user
+            await userRepository.delete(userId);
+
+            // Respond with success message
+            return ResponseUtil.sendResponse(res, "User profile deleted successfully",'');
+        } catch (error) {
+            console.error("Error deleting user profile:", error);
+            return ResponseUtil.sendErrror(res, "Internal server error", 500,error);
+        }
+    }
+
 
 }
 
