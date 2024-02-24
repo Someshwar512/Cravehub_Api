@@ -19,6 +19,7 @@ import { PaymentManagementController } from "../controller/user/paymentmanagemen
 import { GuestUserController } from "../controller/user/guestusermanagement";
 import { AdminSettingsController } from "../controller/user/adminsettingsmanagement";
 import { UserProfileController } from "../controller/user/userProfile";
+import { FavouriteManagenemtController } from "../controller/user/favourite";
 // *********************** API AppSite :-vserions **************************
 const userVersionsController=new UserVersionController();
 router.post('/version',userVersionsController.version);
@@ -145,5 +146,10 @@ const userProfileController=new UserProfileController();
 router.get('/UpdateUserProfile',authenticateToken,userProfileController.updateProfile);
 
 router.delete('/user/:userId',authenticateToken, userProfileController.deleteProfile);
+
+
+const favouriteManagenemtController=new FavouriteManagenemtController();
+
+router.post('/addFavourite',authenticateToken,favouriteManagenemtController.addFavourite);
 
 export default router;

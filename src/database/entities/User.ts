@@ -13,6 +13,7 @@ import { Tag } from './Tags'
 import { ChefCuisine } from './Chef_Cuisine';
 import { ChefTag } from './Chef_Tags';
 import { Dish } from './Dish';
+import { Favourite } from './favourite';
 @Entity({ name: DatabaseTables.USERS })
 export class User {
   @PrimaryGeneratedColumn()
@@ -108,5 +109,8 @@ export class User {
   @OneToMany(() => Dish, dish => dish.chef)
   dishes: Dish[];
 
+
+  @OneToMany(() => Favourite, favourite => favourite.user)
+  favourites: Favourite[];
   
 }
