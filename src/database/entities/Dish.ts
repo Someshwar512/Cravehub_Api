@@ -9,6 +9,7 @@ import { ChefMenu } from './chef_menu';
 import { OrderItems } from './order_items';
 import { Reviews } from './reviews';
 import { Order } from './order_table';
+import { Favourite } from './favourite';
 import { Deleted_Status,Status } from '../../constant';
 @Entity()
 export class Dish {
@@ -106,5 +107,9 @@ export class Dish {
     // // Establishing a many-to-one relationship with the Order entity
     // @ManyToOne(() => Order, order => order.dishes)
     // order: Order; // The order to which this dish belongs
+
+
+    @OneToMany(() => Favourite, favourite => favourite.dish)
+    favourites: Favourite[];
 
 }
