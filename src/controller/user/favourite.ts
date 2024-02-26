@@ -6,6 +6,7 @@ import { error } from 'console';
 
 const favouriteRepositroy = AppDataSource.getRepository(Favourite);
 export class FavouriteManagenemtController {
+    // add favouirte api
     async addFavourite(req: Request, res: Response) {
 
         try {
