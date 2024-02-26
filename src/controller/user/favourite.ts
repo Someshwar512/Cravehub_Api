@@ -6,7 +6,7 @@ import { error } from 'console';
 
 const favouriteRepositroy = AppDataSource.getRepository(Favourite);
 export class FavouriteManagenemtController {
-    // add favouirte api
+    // add favouirte api implements
     async addFavourite(req: Request, res: Response) {
 
         try {
@@ -27,5 +27,11 @@ export class FavouriteManagenemtController {
             return ResponseUtil.sendErrror(res, 'Internal Server errror', 500, error);
         }
 
+    }
+
+    // getAllFavourite dish api implements
+
+    async getAllFavouriteDish(req:Request,res:Response){
+        
     }
 }

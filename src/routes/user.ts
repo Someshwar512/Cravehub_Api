@@ -152,4 +152,6 @@ const favouriteManagenemtController=new FavouriteManagenemtController();
 
 router.post('/addFavourite',authenticateToken,favouriteManagenemtController.addFavourite);
 
+router.get('/allFavouriteDish',authenticateToken,favouriteManagenemtController.getAllFavouriteDish);
+
 export default router;
