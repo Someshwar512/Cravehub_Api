@@ -41,4 +41,12 @@ export class FavouriteManagenemtController {
         return ResponseUtil.sendErrror(res, 'Internal Server Error', 500, err);
     }
 }
+async deleteFavouriteDish(req:Request,res:Response){
+
+    const {Favourite_id}=req.body;
+    const favoriteDishes = await favouriteRepositroy.find({ where: {id:Favourite_id}});
+
+
+
+}
 }
