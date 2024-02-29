@@ -41,12 +41,24 @@ export class FavouriteManagenemtController {
         return ResponseUtil.sendErrror(res, 'Internal Server Error', 500, err);
     }
 }
-async deleteFavouriteDish(req:Request,res:Response){
 
-    const {Favourite_id}=req.body;
-    const favoriteDishes = await favouriteRepositroy.find({ where: {id:Favourite_id}});
+ async  deleteFavouriteDish(req: Request, res: Response){
+    try {
+        const { Favourite_id } = req.body;
+        const favoriteDish = await favouriteRepositroy.find({ where: { id: Favourite_id } });
 
+        if (!favoriteDish) {
+            return res.status(404).json({ error: 'Favorite dish not found' });
+        }
 
+        // Assuming you have a method like delete() in your repository to delete the favorite dish
+        await favouriteRepositroy.delete(favoriteDish[0].id);
 
+        return res.status(200).json({ message: 'Favorite dish deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting favorite dish:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
 }
+
 }
