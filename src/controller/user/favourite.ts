@@ -48,16 +48,16 @@ export class FavouriteManagenemtController {
         const favoriteDish = await favouriteRepositroy.find({ where: { id: Favourite_id } });
 
         if (!favoriteDish) {
-            return res.status(404).json({ error: 'Favorite dish not found' });
+            return ResponseUtil.sendErrror(res,'Favorite dish not found',400,'')
         }
 
         // Assuming you have a method like delete() in your repository to delete the favorite dish
         await favouriteRepositroy.delete(favoriteDish[0].id);
 
-        return res.status(200).json({ message: 'Favorite dish deleted successfully' });
+        return ResponseUtil.sendResponse(res,"Favorite dish deleted successfully",favoriteDish);
     } catch (error) {
         console.error('Error deleting favorite dish:', error);
-        return res.status(500).json({ error: 'Internal server error' });
+        return ResponseUtil.sendErrror(res,"Internal server error",500,error);
     }
 }
 
