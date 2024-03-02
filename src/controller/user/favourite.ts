@@ -61,4 +61,15 @@ export class FavouriteManagenemtController {
     }
 }
 
+// getallFavouriteChef
+async getAllFavouriteChef(req: Request, res: Response) {
+    try {
+        const userId = global.USER_ID; 
+        const favoriteDishes = await favouriteRepositroy.find({ where: { user: userId }, relations: ['dish'] });
+
+        return ResponseUtil.sendResponse(res, 'Favourite dishes fetched successfully', favoriteDishes);
+    } catch (err) {
+        return ResponseUtil.sendErrror(res, 'Internal Server Error', 500, err);
+    }
+}
 }

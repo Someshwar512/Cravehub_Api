@@ -156,4 +156,5 @@ router.get('/allFavouriteDish',authenticateToken,favouriteManagenemtController.g
 
 router.delete('/favourite-dish',authenticateToken,favouriteManagenemtController.deleteFavouriteDish);
 
+router.get('/allFavouriteChefs',authenticateToken,favouriteManagenemtController.getAllFavouriteChef);
 export default router;
