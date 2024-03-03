@@ -33,7 +33,7 @@ const OTP_LENGTH: number = parseInt(process.env.OTPLENGTH || '6', 10);
 
 export class UserProfileController {
    
-    async updateProfile(req: Request, res: Response) {
+    async updateProfileUser(req: Request, res: Response) {
         try {
           
             const userId = parseInt(req.params.userId, 10);
@@ -61,7 +61,7 @@ export class UserProfileController {
         }
     }
 
-    async deleteProfile(req: Request, res: Response) {
+    async deleteProfileUser(req: Request, res: Response) {
         try {
             const userId = parseInt(req.params.userId, 10);
 

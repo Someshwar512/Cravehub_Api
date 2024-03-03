@@ -143,9 +143,9 @@ router.get('/admin-settings',adminSettingsController.getAdminSettingsDetails);
 
 
 const userProfileController=new UserProfileController();
-router.get('/UpdateUserProfile',authenticateToken,userProfileController.updateProfile);
+router.get('/UpdateUserProfile',authenticateToken,userProfileController.updateProfileUser);
 
-router.delete('/user/:userId',authenticateToken, userProfileController.deleteProfile);
+router.delete('/user/:userId',authenticateToken, userProfileController.deleteProfileUser);
 
 
 const favouriteManagenemtController=new FavouriteManagenemtController();
