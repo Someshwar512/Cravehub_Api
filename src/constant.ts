@@ -41,7 +41,8 @@ export enum DatabaseTables {
   CART="cart",
   PAYMENT_TRANSACTIONS="payment_transactions",
   ADMIN_SETTINGS="admin_settings",
-  FAVOURITES="favourites"
+  FAVOURITES="favourites",
+  NOTIFICATIONS="notifications",
 }
 
 export enum Roles {

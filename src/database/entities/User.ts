@@ -14,6 +14,7 @@ import { ChefCuisine } from './Chef_Cuisine';
 import { ChefTag } from './Chef_Tags';
 import { Dish } from './Dish';
 import { Favourite } from './favourite';
+import { Notification } from './notfications';
 @Entity({ name: DatabaseTables.USERS })
 export class User {
   @PrimaryGeneratedColumn()
@@ -112,5 +113,8 @@ export class User {
 
   @OneToMany(() => Favourite, favourite => favourite.user)
   favourites: Favourite[];
+
+  @OneToMany(type => Notification, notification => notification.user)
+  notifications: Notification[];
   
 }
