@@ -60,12 +60,12 @@ export class UserOtpVerifyController {
             const authClient = await authClientRepository.findOne({ where: { app_id, app_secret } });
 
             if (!authClient) {
-                return ResponseUtil.sendErrror(res, 'Invalid auth client', 401, 'Invalid auth client');
+                return ResponseUtil.sendErrror(res, 'Invalid auth client', 401, '');
             }
 
             // Check if the verification type is valid
             if (!(verifaction_type in OtpVerificationType)) {
-                return ResponseUtil.sendErrror(res, 'Invalid verification type', 400, 'Invalid verification type');
+                return ResponseUtil.sendErrror(res, 'Invalid verification type', 400, '');
             }
 
             const otpDetails = await otpverfiyRepository.findOne({
