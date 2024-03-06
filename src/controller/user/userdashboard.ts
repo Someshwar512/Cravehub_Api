@@ -21,7 +21,7 @@ export class UserDashboardController {
 
   async getDashboard(req: Request, res: Response) {
     // try {
-    const {  date,zipcode } = req.query;
+    const {  date } = req.query;
 
     // userData
     const user = await userRepository
@@ -58,7 +58,7 @@ export class UserDashboardController {
     .leftJoinAndSelect('user.kitchens', 'kitchens')
     .where('chefMenu.orderby_date = :orderDate', { orderDate: formattedDate })
     .andWhere('dishReviews.type = :reviewType', { reviewType: Reviews_Type.DISH })
-     .andWhere('kitchens.zipcode = :zipcode', { zipcode:zipcode })
+    //  .andWhere('kitchens.zipcode = :zipcode', { zipcode:zipcode })
     .orderBy('chefMenu.orderby_date', 'ASC');
   
 
