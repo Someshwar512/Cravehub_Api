@@ -154,7 +154,7 @@ router.post('/addFavourite',authenticateToken,favouriteManagenemtController.addF
 
 router.get('/allFavouriteDish',authenticateToken,favouriteManagenemtController.getAllFavouriteDish);
 
-router.delete('/favourite-dish',authenticateToken,favouriteManagenemtController.deleteFavouriteDish);
+router.delete('/favouritedish',authenticateToken,favouriteManagenemtController.deleteFavouriteDish);
 
 router.get('/allFavouriteChefs',authenticateToken,favouriteManagenemtController.getAllFavouriteChef);
 export default router;
