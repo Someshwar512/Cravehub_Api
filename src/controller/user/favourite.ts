@@ -38,7 +38,7 @@ export class FavouriteManagenemtController {
 
         return ResponseUtil.sendResponse(res, 'Favourite dishes fetched successfully', favoriteDishes);
     } catch (err) {
-        return ResponseUtil.sendErrror(res, 'Internal Server Error', 500, err);
+        return ResponseUtil.sendErrror(res, 'Internal Server Error', 500, "internal server error");
     }
 }
 
