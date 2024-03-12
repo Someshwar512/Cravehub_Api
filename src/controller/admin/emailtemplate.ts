@@ -65,6 +65,7 @@ export class EmailTemplatecontroller {
       newemailtemplate.content = content;
       newemailtemplate.slug = slug;
 
+      // save in db table 
       const savedemailtemplate = await emailrepository.save(newemailtemplate);
 
       return ResponseUtil.sendResponse(
