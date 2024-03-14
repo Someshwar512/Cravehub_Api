@@ -45,6 +45,7 @@ export class UserPasswordManagementController {
                 return ResponseUtil.sendErrror(res, 'Invalid User', 401, 'Invalid User');
             }
 
+            // password encrptions form save in database
             const saltRounds = 4;
             const hashedPassword = await bcrypt.hash(newPassword, saltRounds);
             user.password = hashedPassword;

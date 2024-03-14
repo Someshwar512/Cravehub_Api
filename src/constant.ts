@@ -136,8 +136,8 @@ export enum DeleteCartAction{
   ALL="ALL",
 }
 
-// export enum PaymentStatus{
-// CREATED="CREATED",
-// PAID="PAID",
-// }
+export enum PaymentStatus{
+CREATED="CREATED",
+PAID="PAID",
+}
 

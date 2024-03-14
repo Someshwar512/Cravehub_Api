@@ -46,14 +46,7 @@ export class GuestUserController {
       });
     }
   
-    // Filter popularChefs based on the provided ZIP code
-    if (filteredData.popularChefs) {
-      filteredData.popularChefs = data.popularChefs.filter((chef: any) => {
-        return chef.delivery_window.zipcode === zipcode;
-      });
-    }
-  
-    return filteredData;
+
   }
   
 }

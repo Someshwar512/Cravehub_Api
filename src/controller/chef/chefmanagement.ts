@@ -88,6 +88,7 @@ export class AdminChefController {
         kitchen.zipcode = zipcode;
         kitchen.chef = user;
 
+        // save in kitchen table 
         const savedKitchen = await kitchenRepository.save(kitchen);
 
         const kitchenPhoto = new KitchenPhotos();
