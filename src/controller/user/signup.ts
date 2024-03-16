@@ -16,7 +16,7 @@ import { Country } from '../../database/entities/Country';
 import { Status } from '../../constant';
 import { sendOtpByEmail } from '../../utils/functions';
 import { addnewcountry, addnewstate, addnewcity, addnewzipcode } from "../../utils/functions";
-
+import { Deleted_Status } from '../../constant';
 // declare global
 const userRepository = AppDataSource.getRepository(User);
 const userAddressRepository = AppDataSource.getRepository(UserAddress);
@@ -161,6 +161,36 @@ export class UserSignupController {
     }
 
 
+
+      // DeleteByUserId ApI
+  async deleteUserById(req: Request, res: Response) {
+    try {
+      const userId = parseInt(req.params.id, 10);
+      const user = await userRepository.findOne({ where: { id: userId } });
+
+      if (!user) {
+        return ResponseUtil.sendErrror(
+          res,
+          "User not found",
+          404,
+          "User not found"
+        );
+      }
+
+      user.is_deleted = Deleted_Status.DELETED;
+
+      await userRepository.save(user);
+
+      return ResponseUtil.sendResponse(res, "User deleted successfully", user);
+    } catch (error) {
+      return ResponseUtil.sendErrror(
+        res,
+        "Failed to delete user",
+        500,
+        "Internal server error"
+      );
+    }
+  }
 
 }
 
