@@ -18,11 +18,6 @@ const router = express.Router();
 //  router.post('/adduser',authenticateToken,adminUserController.adduser);
 router.post('/adduser',authenticateToken,adminUserController.adduser);
 
-// get specific user Byid
-// router.get('/user/:id/:role',authenticateToken, adminUserController.getUserDetails);
-
-// router.get('/getuserbyid/:id/:role', authenticateToken, adminUserController.getUserDetails);
-
 
 router.get('/getuserbyid/:id/', authenticateToken, adminUserController.getUserDetails);
 
