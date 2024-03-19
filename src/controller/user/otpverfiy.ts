@@ -179,7 +179,7 @@ export class UserOtpVerifyController {
 
         } catch (error) {
             console.log(error);
-            return ResponseUtil.sendErrror(res, 'Internal server error', 500, error);
+            return ResponseUtil.sendErrror(res, 'Internal server error', 500, 'internal server error');
         }
     }
 
