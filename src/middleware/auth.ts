@@ -103,6 +103,7 @@ export class Login {
       newDeviceToken.access_token = token;
       newDeviceToken.user_id = user.id;
       newDeviceToken.device_token = device_token;
+      // save toekndata in database
 
       const tokenData = await deviceTokenRepository.save(newDeviceToken);
 
