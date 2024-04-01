@@ -10,7 +10,7 @@ import express from "express";
  import { EmailTemplatecontroller } from "../controller/admin/emailtemplate";
  import { Ordermanagementcontroller } from "../controller/admin/ordermanagement";
 const router = express.Router();
-
+// All Api implemations admin site
 
 // *********************** API :-User management **************************
 // addUser Api
