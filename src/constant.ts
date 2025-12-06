@@ -134,10 +134,18 @@ export enum DeliveryPreference {
 export enum DeleteCartAction{
   SINGLE="SINGLE",
   ALL="ALL",
+
+  
 }
+
 
 export enum PaymentStatus{
 CREATED="CREATED",
 PAID="PAID",
 }
+
+
+
+
+
 

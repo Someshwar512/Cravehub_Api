@@ -40,6 +40,7 @@ const authClientRepository = AppDataSource.getRepository(AuthClient);
 const deviceTokenRepository = AppDataSource.getRepository(AuthToken);
 const otpTokenRepository = AppDataSource.getRepository(OTP_VERFIY);
 
+
 export class AdminUserController {
   // adduser and addchef Api
   async adduser(req: Request, res: Response) {
@@ -73,6 +74,7 @@ export class AdminUserController {
       if (!zipcode) {
         return res.status(404).json({ message: "Zipcode not found" });
       }
+      
 
       const userAddress = new UserAddress();
       userAddress.address_line_1 = address_line_1;
@@ -367,6 +369,7 @@ export class AdminUserController {
             status: user.status,
           }));
 
+
           return ResponseUtil.sendResponse(
             res,
             "Users Fetched Successfully",
@@ -406,6 +409,8 @@ export class AdminUserController {
       return ResponseUtil.sendErrror(res, "Internal server error", 500, error);
     }
   }
+
+  
 
   // Active and inactive status
   async userStatus(req: Request, res: Response) {
@@ -503,5 +508,7 @@ export class AdminUserController {
       return ResponseUtil.sendErrror(res, "Internal server error", 500, error);
     }
   }
+
+
 }
 

@@ -50,6 +50,7 @@ const userPasswordManagementController=new UserPasswordManagementController();
 
 // router.post('/verifyforgotpassword',userPasswordManagementController.forgotPasswordVerify);
 
+
 router.post('/newpassword',authenticateToken,userPasswordManagementController.createNewPassword);
 
 

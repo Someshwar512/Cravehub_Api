@@ -288,6 +288,7 @@ export class AdminChefController {
         } catch (error) {
             return ResponseUtil.sendErrror(res, 'Failed to delete user', 500, 'Internal server error');
         }
+        
     }
 
     // update dish api

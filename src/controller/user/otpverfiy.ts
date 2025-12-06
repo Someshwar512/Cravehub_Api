@@ -31,6 +31,7 @@ import { sendOtpByEmail } from '../../utils/functions';
 // Add other imports and functions
 import bcrypt from 'bcrypt';
 import nodemailer from 'nodemailer';
+import { isNewExpression } from 'typescript';
 // declare global
 
 const otpLength: number = parseInt(process.env.OTPLENGTH || '6', 10);
@@ -47,14 +48,16 @@ const authClientRepository = AppDataSource.getRepository(AuthClient);
 const deviceTokenRepository = AppDataSource.getRepository(AuthToken);
 const otpverfiyRepository = AppDataSource.getRepository(OTP_VERFIY);
 
-export class UserOtpVerifyController {
+export class UserOtpVerifyController 
+{
 
 
     // OTP Verification API
-
+    
     async verifyOTP(req: Request, res: Response) {
         try {
             const { app_id, app_secret, otp, userId, verifaction_type } = req.body;
+
 
             // Check if the auth client exists or not
             const authClient = await authClientRepository.findOne({ where: { app_id, app_secret } });
@@ -104,12 +107,13 @@ export class UserOtpVerifyController {
                         otpDetails.is_used = OtpUse.USED;
                         otpDetails.status = Status.INACTIVE;
                         await otpverfiyRepository.save(otpDetails);
-
+                        
                         return ResponseUtil.sendResponse(res, "Token generated for SIGNUP verification", { token });
                     } else {
                         return ResponseUtil.sendErrror(res, "User not found", 404, "User not found");
                     }
-                } else {
+                } else 
+                    {
 
                     const user = await userRepository.findOne({ where: { id: userId } });
                     if (user) {
@@ -119,7 +123,9 @@ export class UserOtpVerifyController {
                         return ResponseUtil.sendResponse(res, "Verification successful for the Forgot password", "Verification successful");
                     } else {
                         return ResponseUtil.sendErrror(res, "User not found", 404, "User not found");
+                   
                     }
+                    speechSynthesis
                 }
             } else {
                 return ResponseUtil.sendErrror(res, "Invalid OTP", 401, "Invalid OTP");
@@ -127,13 +133,18 @@ export class UserOtpVerifyController {
         } catch (error) {
             return ResponseUtil.sendErrror(res, 'Internal server error', 500, error);
         }
+
+        
     }
+
+
 
 
     // resendOtp api
     async resendOtp(req: Request, res: Response) {
         try {
             const { email } = req.body;
+            // name;
 
             // Find user by email
             const user = await userRepository.findOne({ where: { email } });
@@ -150,6 +161,7 @@ export class UserOtpVerifyController {
                 await otpverfiyRepository.save(existingOtpRecord);
             }
 
+            
             // Generate a new OTP
             const newOtp = generateOTP(otpLength);
 
@@ -170,8 +182,10 @@ export class UserOtpVerifyController {
               <p>Thank you.</p>
             `
             );
-
-            if (emailSent) {
+            
+         
+            if (emailSent)
+                 {
                 return ResponseUtil.sendResponse(res, ' OTP Sent via Email', { newOtp });
             } else {
                 return ResponseUtil.sendErrror(res, 'Failed to send new OTP via email', 403, 'Email sending failed');

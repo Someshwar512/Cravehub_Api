@@ -19,6 +19,8 @@ app.use(express.json());
 // Call auth routes
 app.use("/api", authRoute);
 
+
+
 // Call admin routes
 app.use("/api/admin", adminRoute);
 
@@ -28,5 +30,8 @@ app.use("/api/chef", chefRoute);
 // Call user routes
 app.use("/api/user", userRoute);
 
+
+// check routes working or not
+// app.use("",)
 
 export default app;

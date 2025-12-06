@@ -4,7 +4,8 @@ import { UserDashboardController } from './userdashboard';
 export class GuestUserController {
   private userDashboardController: UserDashboardController;
 
-  constructor() {
+  constructor() 
+  {
     this.userDashboardController = new UserDashboardController();
   }
 

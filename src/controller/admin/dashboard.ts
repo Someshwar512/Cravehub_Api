@@ -6,8 +6,13 @@ import { AppDataSource } from '../../database/data-source';
 import { DatabaseTables, Roles } from '../../constant';
 
 export class AdminDashboardController {
-  async getDashboardData(req: Request, res: Response) {
-    try {
+  async getDashboardData(req: Request, res: Response) 
+  {
+    try 
+    // 
+    //  suufnmnkm mdsm;dl;lm klml;mlm;ml;krl;kl;kr;lkk d;l;ap; Solst someshwar rames i ma  solve this 
+    //  cdkk solat 
+    {
       const userRepository = AppDataSource.getRepository(User);
       
       const roleCounts = await userRepository.createQueryBuilder(DatabaseTables.USERS)

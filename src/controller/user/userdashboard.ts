@@ -22,6 +22,7 @@ export class UserDashboardController {
   async getDashboard(req: Request, res: Response) {
     // try {
     const {  date } = req.query;
+    // const {name,email,}=req.query;
 
     // userData
     const user = await userRepository

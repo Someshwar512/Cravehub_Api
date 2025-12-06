@@ -45,11 +45,13 @@ export class AdminChefController {
                 chefId,
                 dish_name,
                 dish_price,
+                
                 dish_description,
                 portion_size_id,
                 preparation_time,
                 cuisine_id,
                 foodtype_id,
+                // foodtype=
                 ingredientsid,
                 dietaryid,
             } = req.body;
@@ -73,6 +75,7 @@ export class AdminChefController {
 
             // Save the dish table
             const savedDish = await dishchefRepositroy.save(newDish);
+            
 
             // Save associations in ingredients_dish table
             const ingredientsIds = ingredientsid;
@@ -93,6 +96,7 @@ export class AdminChefController {
                 return dishDietary;
             });
             await dishDietaryRepositroy.save(chefdietary);
+ 
 
             // Return success response
             return ResponseUtil.sendResponse(res, "Dish added successfully", savedDish);

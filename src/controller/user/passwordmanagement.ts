@@ -27,6 +27,7 @@ const OTP_LENGTH: number = parseInt(process.env.OTPLENGTH || '6', 10);
 
 export class UserPasswordManagementController {
 
+
     // create newpassword api
     async createNewPassword(req: Request, res: Response) {
         try {
@@ -44,6 +45,7 @@ export class UserPasswordManagementController {
             if (!user) {
                 return ResponseUtil.sendErrror(res, 'Invalid User', 401, 'Invalid User');
             }
+            
 
             // password encrptions form save in database
             const saltRounds = 4;

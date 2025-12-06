@@ -126,6 +126,7 @@ export class UserSignupController {
             userAddress.zipcode = zipCodeId;
             userAddress.user = user;
 
+    
             await userAddressRepository.save(userAddress);
 
             const userotp = generateOTP(OTP_LENGTH);
@@ -147,6 +148,7 @@ export class UserSignupController {
                 `
             );
 
+            
             if (emailSent) {
                 return ResponseUtil.sendResponse(res, 'OTP Sent via Email', { otp: userotp, userData: userdata });
             } else {
@@ -159,6 +161,7 @@ export class UserSignupController {
             return ResponseUtil.sendErrror(res, 'Internal server error', 500, "Internal server error");
         }
     }
+
 
 
 
@@ -191,6 +194,10 @@ export class UserSignupController {
       );
     }
   }
+
+//   async AddNewUser(req:Request,res:Response){
+
+//   }
 
 }
 

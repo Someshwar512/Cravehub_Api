@@ -4,6 +4,7 @@ import { AppDataSource } from '../../database/data-source';
 import { ResponseUtil } from '../../utils/Response';
 import { error } from 'console';
 
+
 const favouriteRepositroy = AppDataSource.getRepository(Favourite);
 export class FavouriteManagenemtController {
     // add favouirte api implements

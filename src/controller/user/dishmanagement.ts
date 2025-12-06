@@ -90,6 +90,7 @@ export class DishManagementController {
         .getOne();
 
       if (!dish) {
+
         return ResponseUtil.sendErrror(res, 'Dish not found', 404, 'Dish not found');
       }
 
@@ -175,6 +176,13 @@ export class DishManagementController {
     } catch (error) {
       return ResponseUtil.sendErrror(res, "Internal server error", 500, error);
     }
+
+  }
+
+
+  async addToCart(req:Request,res:Response){
+
+    
 
   }
 
