@@ -22,7 +22,7 @@ const razorpay = new Razorpay({
 
 export class PaymentManagementController {
   
-  // confirmPayment api
+  // confirmPayment api implemations 
   async confirmPayment(req: Request, res: Response) {
     try {
       const { razorpay_payment_id, razorpay_order_id, order_id, status } = req.body;
