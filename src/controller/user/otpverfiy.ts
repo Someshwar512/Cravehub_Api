@@ -150,7 +150,7 @@ export class UserOtpVerifyController
             const user = await userRepository.findOne({ where: { email } });
 
             if (!user) {
-                return ResponseUtil.sendErrror(res, 'User not found', 404, 'User not found');
+                return ResponseUtil.sendErrror(res, 'User Not founds', 404, 'User not found');
             }
 
             // Deactivate any existing OTP records associated with the user
