@@ -31,6 +31,7 @@ const countryRepository = AppDataSource.getRepository(Country);
 const OTP_LENGTH: number = parseInt(process.env.OTPLENGTH || '6', 10);
 
 export class UserSignupController {
+    
     // signup user api mobile app site 
     async signup(req: Request, res: Response) {
         let newZipcode;

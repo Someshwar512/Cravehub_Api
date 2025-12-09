@@ -32,7 +32,8 @@ export class GuestUserController {
     // Filter dishList based on the provided ZIP code
     if (filteredData.dishList) {
       filteredData.dishList = data.dishList.filter((dish: any) => {
-        return dish.dates_available.some((date: any) => {
+        return dish.dates_available.some((date: any) =>
+           {
           return date.zipcode === zipcode;
         });
       });
