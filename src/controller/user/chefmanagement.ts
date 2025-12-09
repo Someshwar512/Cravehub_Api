@@ -104,7 +104,7 @@ export class ChefManagementController {
       };
 
       // Send the response with the chef details
-      return ResponseUtil.sendResponse(res, 'Chef Details', chefDetails);
+      return ResponseUtil.sendResponse(res, 'Chef Details ', chefDetails);
     } catch (error) {
       return ResponseUtil.sendErrror(res, 'Internal server error', 500, error);
     }

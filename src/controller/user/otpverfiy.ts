@@ -149,7 +149,8 @@ export class UserOtpVerifyController
             // Find user by email
             const user = await userRepository.findOne({ where: { email } });
 
-            if (!user) {
+            if (!user)
+                 {
                 return ResponseUtil.sendErrror(res, 'User Not founds', 404, 'User not found');
             }
 

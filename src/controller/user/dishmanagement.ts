@@ -18,6 +18,7 @@ const reviewRepository = AppDataSource.getRepository(Reviews);
 const dishRepository = AppDataSource.getRepository(Dish);
 const authClientRepository = AppDataSource.getRepository(AuthClient)
 
+// Dish 
 export class DishManagementController {
 
   // viewAllPopular dish api

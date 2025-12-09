@@ -54,8 +54,10 @@ export class UserProfileController {
             await userRepository.save(user);
 
             // Respond with success
-            return ResponseUtil.sendResponse(res, "User profile updated successfully", user);
-        } catch (error) {
+            return ResponseUtil.sendResponse(res, "User profiles updated successfully", user);
+        }
+         catch (error) 
+         {
             console.error("Error updating user profile:", error);
             return ResponseUtil.sendErrror(res, "Internal server error",500,error);
         }
