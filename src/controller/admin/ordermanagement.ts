@@ -8,6 +8,7 @@ import { ILike } from 'typeorm';
 import { Order } from "../../database/entities/order_table";
 
 const orderRepository = AppDataSource.getRepository(Order);
+
 export class Ordermanagementcontroller {
   // get all order (with delivered and Cancelled as Parameters)
   async  getOrders(req: Request, res: Response) {
@@ -51,7 +52,6 @@ export class Ordermanagementcontroller {
         return ResponseUtil.sendErrror(res, "Internal server error", 500, error || 'Unknown error');
     }
 }
-
 
   // Order Status
   async orderStatus(req: Request, res: Response) {
@@ -251,7 +251,7 @@ export class Ordermanagementcontroller {
   //   }
   // }
 
-
+  
   async orderStatustest(req: Request, res: Response) {
     try {
       const { status, record_id, table_name, column_name } = req.body;
@@ -294,5 +294,8 @@ export class Ordermanagementcontroller {
       );
     }
   }
-  
+ 
 }
+
+
+

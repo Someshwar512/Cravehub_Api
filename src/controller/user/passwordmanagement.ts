@@ -21,6 +21,7 @@ const authClientRepository = AppDataSource.getRepository(AuthClient);
 const deviceTokenRepository = AppDataSource.getRepository(AuthToken);
 const otpverfiyRepository = AppDataSource.getRepository(OTP_VERFIY);
 
+
 // golbal declare
 const OTP_LENGTH: number = parseInt(process.env.OTPLENGTH || '6', 10);
 

@@ -32,7 +32,7 @@ const countryRepository = AppDataSource.getRepository(Country);
 const OTP_LENGTH: number = parseInt(process.env.OTPLENGTH || '6', 10);
 
 export class UserProfileController {
-   
+//    
     async updateProfileUser(req: Request, res: Response) {
         try {
           
@@ -50,7 +50,7 @@ export class UserProfileController {
             }
             // Add more fields as needed
 
-            // Save updated user
+            // Save updated user in Database
             await userRepository.save(user);
 
             // Respond with success

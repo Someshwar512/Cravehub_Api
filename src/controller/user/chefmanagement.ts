@@ -62,6 +62,8 @@ export class ChefManagementController {
     }
   }
 
+  
+
   // viewchefbyid api
   async viewChefDetailsById(req: Request, res: Response) {
     try {
@@ -86,6 +88,8 @@ export class ChefManagementController {
         .orderBy('chefReviews.rating', 'DESC')
         .getOne();
 
+
+        
       if (!chef) {
         return ResponseUtil.sendErrror(res, 'Chef not found', 404, 'Chef not found');
       }
