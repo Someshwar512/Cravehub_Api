@@ -31,7 +31,5 @@ app.use("/api/chef", chefRoute);
 app.use("/api/user", userRoute);
 
 
-// check routes working or not
-// app.use("",)
 
 export default app;
