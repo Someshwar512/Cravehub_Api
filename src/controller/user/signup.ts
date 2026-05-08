@@ -153,7 +153,7 @@ export class UserSignupController {
             if (emailSent) {
                 return ResponseUtil.sendResponse(res, 'OTP Sent via Email you can check', { otp: userotp, userData: userdata });
             } else {
-                return ResponseUtil.sendErrror(res, 'Failed to send OTP via email', 403, 'Email sending failed');
+                return ResponseUtil.sendErrror(res, 'Failed to send OTP via email', 403, 'Email sending fail');
             }
 
 

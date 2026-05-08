@@ -73,7 +73,7 @@ export class AdminChefController {
             newDish.foodtype = foodtype_id;
             newDish.chef_id = chefId;
 
-            // Save the dish table
+            // Save the dish table all data
             const savedDish = await dishchefRepositroy.save(newDish);
             
 
